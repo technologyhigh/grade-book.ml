@@ -5,20 +5,19 @@ $(document).ready(function(){
 	if( $("#securedPage").length ){
 		if( sessionStorage.getItem("loggedIn") && entryExists(sessionStorage.getItem("loggedIn")) ){
 			$("#uWM").text("Welcome " + getUser( sessionStorage.getItem("loggedIn") ).fName + "!");
+			$.ajax({
+					'async': false,
+					'global': false,
+					'url': "courses.json",
+					'dataType': "json",
+					'success': function (data) {
+							jsonX = data;
+					}
+			});
 			return;
 		}
 		$(location).attr('href','login.html');
 	}
-	
-	$.ajax({
-			'async': false,
-			'global': false,
-			'url': "courses.json",
-			'dataType': "json",
-			'success': function (data) {
-					jsonX = data;
-			}
-	});
 
 	var json = (function () {
 	    var json = null;
