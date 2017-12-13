@@ -18,20 +18,6 @@ $(document).ready(function(){
 		}
 		$(location).attr('href','login.html');
 	}
-
-	var json = (function () {
-	    var json = null;
-	    $.ajax({
-	        'async': false,
-	        'global': false,
-	        'url': "courses.json",
-	        'dataType': "json",
-	        'success': function (data) {
-	            json = data;
-	        }
-	    });
-	    return json;
-	})();
 });
 
 $(document).ready(function(){
@@ -77,7 +63,47 @@ $(document).ready(function(){
     	}
     );
 });
+function loadReport(){
+	var courses = null;
+	if( coursesExists( sessionStorage.getItem("loggedIn")) ){
+		courses = loadCourses( sessionStorage.getItem("loggedIn") );
+		return;
+	} else {
+		courses = storecourses( sessionStorage.getItem("loggedIn") );
+	}
 
+	// Counter to go through the creation of table rows smoothly.
+	var tblRowsCounter = 0;
+
+	// Find a <table> element with id="myTable":
+	var table = document.getElementById("userReportCard");
+
+	for(;tblRowsCounter < 5; tblRowsCounter++){
+		// Create an empty <tr> element and add it to the 1st position of the table:
+		var row = table.insertRow(tblRowsCounter);
+
+		// Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+		var cell1 = row.insertCell(0);
+		var cell2 = row.insertCell(1);
+
+		// Add some text to the new cells:
+		cell1.innerHTML = "NEW CELL1";
+		cell2.innerHTML = "NEW CELL2";
+	}
+	alert("Bappings");
+}
+function storecourses(uId){
+
+}
+function loadCourses(uId){
+	return JSON.parse( localStorage.getItem(uId + "courses") );
+}
+function coursesExists(uId){
+	if (localStorage.getItem(uId + "courses") == null) {
+  		return false;
+	}
+	return true;
+}
 function storeUser(){
 	var fname, lname, formClass, aCode;
 	fname = document.getElementById("fName").value;
