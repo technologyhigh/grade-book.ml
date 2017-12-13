@@ -67,10 +67,8 @@ function lRc(){
 	var courses = null;
 	if( coursesExists( sessionStorage.getItem("loggedIn")) ){
 		courses = loadCourses( sessionStorage.getItem("loggedIn") );
-		return;
 	} else {
 		courses = storecourses( sessionStorage.getItem("loggedIn") );
-		return;
 	}
 
 	// Find a <table> element with id="userReportCard":
@@ -99,6 +97,7 @@ function lRc(){
 		cLetr.innerHTML = "FEDCBA".charAt( ranNum );
 		cPoin.innerHTML = ranNum * 2;
 	}
+	return true;
 }
 function storecourses(uId){
 	var stringCourses = "[";
