@@ -9,6 +9,17 @@ $(document).ready(function(){
 		$(location).attr('href','login.html');
 	}
 
+	global jsonX = null;
+	$.ajax({
+			'async': false,
+			'global': false,
+			'url': "courses.json",
+			'dataType': "json",
+			'success': function (data) {
+					jsonX = data;
+			}
+	});
+
 	var json = (function () {
 	    var json = null;
 	    $.ajax({
@@ -18,7 +29,6 @@ $(document).ready(function(){
 	        'dataType': "json",
 	        'success': function (data) {
 	            json = data;
-							console.log(data);
 	        }
 	    });
 	    return json;
