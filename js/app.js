@@ -1,4 +1,5 @@
 jsonX = null;
+courses = null;
 $(document).ready(function(){
 	// Check to see if page requires signin. If it does and the user isn't logged in
 	// then redirect them to the login page.
@@ -64,7 +65,9 @@ $(document).ready(function(){
     );
 });
 function lRc(){
-	var courses = null;
+	if( courses != null){
+		return true;
+	}
 	if( coursesExists( sessionStorage.getItem("loggedIn")) ){
 		courses = loadCourses( sessionStorage.getItem("loggedIn") );
 	} else {

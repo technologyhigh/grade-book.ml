@@ -13,8 +13,81 @@
   <link rel="stylesheet" href="theme.css">
   <!-- Script: Make my navbar transparent when the document is scrolled to top -->
   <script src="js/navbar-ontop.js"></script>
-  <!-- Script: Animated entrance -->
-  <script src="js/animate-in.js"></script>
+  <style>
+  table.quiz {
+      color: white;
+      font-weight: bold;
+      margin: 1em auto 2em auto;
+      width: 360px;
+  }
+
+  table.quiz td {
+      padding: 5px 15px;
+      text-align: left;
+      width: 60px;
+  }
+  fieldset {
+      border-color: #356AA0;
+      margin-bottom: 1em;
+
+  }
+
+      legend {
+          font-size: 105%;
+          font-weight: 600;
+          padding-left: 15px;
+          padding-right: 15px;
+          padding-top: 15px;
+      }
+
+          label {
+              display: block;
+              line-height: 1.75em;
+          }
+
+              input[type="radio"] {
+                  margin-right: 10px;
+              }
+  td.missing-label,
+      td.right-label,
+      td.wrong-label {
+          border-bottom: 1px solid;
+          border-left: 1px solid;
+          border-top: 1px solid;
+      }
+
+      td.missing-score,
+      td.right-score,
+      td.wrong-score {
+          border-bottom: 1px solid;
+          border-right: 1px solid;
+          border-top: 1px solid;
+          text-align: right;
+      }
+
+      td.missing-label,
+      td.missing-score {
+          background: #C79810;
+          border-bottom-color: #946500;
+          border-left-color: #946500;
+          border-top-color: #946500;
+      }
+
+      td.right-label,
+      td.right-score {
+          background: #6BBA70;
+          border-bottom-color: #38873D;
+          border-top-color: #38873D;
+      }
+
+      td.wrong-label,
+      td.wrong-score {
+          background: #D01F3C;
+          border-bottom-color: #9D0009;
+          border-right-color: #9D0009;
+          border-top-color: #9D0009;
+      }
+  </style>
 </head>
 
 <body id="securedPage">
@@ -56,85 +129,15 @@
   <!-- Footer -->
   <div class="py-5 bg-light">
     <div class="container">
-      <table class="table table-striped">
-    <thead style="
-    background: #FF473B;
-    color: #fff;
-    font-weight: bold;
-    border: solid 2px #fff;
-    box-shadow: 0px 0px 15px 2px #aaa8a8;
-    ">
-      <tr>
-        <td colspan="3">Course </td>
-        <td rowspan="2"> Semester </td>
-        <td rowspan="2"> Credits </td>
-        <td colspan="2"> Grade </td>
-      </tr>
-      <tr>
-        <td>Code </td>
-        <td colspan="2"> Name </td>
-        <td> Letter </td>
-        <td> Points </td>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>CS 225 </td>
-        <td colspan="2">Data Structures </td>
-        <td> Semester 1 (2017)</td>
-        <td> 3.0 </td>
-        <td> A </td>
-        <td> 12.0 </td>
-      </tr>
-      <tr>
-        <td>PHIL 105 </td>
-        <td colspan="2">Ethics </td>
-        <td> Semester 1 (2017)</td>
-        <td> 3.0 </td>
-        <td> A- </td>
-        <td> 10.98 </td>
-      </tr>
-      <tr>
-        <td>ECE 310 </td>
-        <td colspan="2">Digital Signal Processing </td>
-        <td> Semester 2 (2016)</td>
-        <td> 3.0 </td>
-        <td> A </td>
-        <td> 12 </td>
-      </tr>
-      <tr>
-        <td>CS 373 </td>
-        <td colspan="2">Combinatorial Algorithms </td>
-        <td> Semester 2 (2016)</td>
-        <td> 3.0 </td>
-        <td> B+ </td>
-        <td> 9.99</td>
-      </tr>
-      <tr>
-        <td>MATH 225 </td>
-        <td colspan="2">Multi-Variable Calculus </td>
-        <td> Semester 2 (2016)</td>
-        <td> 3.0 </td>
-        <td> A- </td>
-        <td> 10.98 </td>
-      </tr>
-    </tbody>
-    <tfoot style="
-    background: #FF473B;
-    color: #fff;
-    font-weight: bold;
-    border: solid 2px #fff;
-    ">
-      <tr>
-        <td colspan="4" class="footer">Total</td>
-        <td> 15.0 </td>
-        <td colspan="2">55.95 </td>
-      </tr>
-      <tr>
-        <td colspan="4" class="footer">GPA</td>
-        <td colspan="3">3.73 / 4.0 </td>
-      </tr>
-  </table>
+
+      <script src="js/Result.js"></script>
+      <script src="js/Option.js"></script>
+      <script src="js/Quiz.js"></script>
+      <script src="js/Question.js"></script>
+      <script src="questions.js"></script>
+      <script>
+          var quiz = new Quiz("Intro to JS Quiz", questions, {"shuffle": true});
+      </script>
     </div>
   </div>
   <div class="bg-dark">
@@ -152,7 +155,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
   <!-- Script: Smooth scrolling between anchors in the same page -->
-  <script src="js/smooth-scroll.js"></script>
+  <!-- <script src="js/smooth-scroll.js"></script> -->
+
   <script src="js/app.js"></script>
 </body>
 

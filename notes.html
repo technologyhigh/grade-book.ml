@@ -48,7 +48,7 @@
     <div class="container mt-5">
       <div class="row">
         <div class="col-md-12 my-5 text-lg-left text-center align-self-center">
-          <h1 class="display-1">Submit an Assignment</h1>
+          <h1 class="display-1">Notes Section</h1>
         </div>
       </div>
     </div>
@@ -56,85 +56,530 @@
   <!-- Footer -->
   <div class="py-5 bg-light">
     <div class="container">
-      <table class="table table-striped">
-    <thead style="
-    background: #FF473B;
-    color: #fff;
-    font-weight: bold;
-    border: solid 2px #fff;
-    box-shadow: 0px 0px 15px 2px #aaa8a8;
-    ">
-      <tr>
-        <td colspan="3">Course </td>
-        <td rowspan="2"> Semester </td>
-        <td rowspan="2"> Credits </td>
-        <td colspan="2"> Grade </td>
-      </tr>
-      <tr>
-        <td>Code </td>
-        <td colspan="2"> Name </td>
-        <td> Letter </td>
-        <td> Points </td>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>CS 225 </td>
-        <td colspan="2">Data Structures </td>
-        <td> Semester 1 (2017)</td>
-        <td> 3.0 </td>
-        <td> A </td>
-        <td> 12.0 </td>
-      </tr>
-      <tr>
-        <td>PHIL 105 </td>
-        <td colspan="2">Ethics </td>
-        <td> Semester 1 (2017)</td>
-        <td> 3.0 </td>
-        <td> A- </td>
-        <td> 10.98 </td>
-      </tr>
-      <tr>
-        <td>ECE 310 </td>
-        <td colspan="2">Digital Signal Processing </td>
-        <td> Semester 2 (2016)</td>
-        <td> 3.0 </td>
-        <td> A </td>
-        <td> 12 </td>
-      </tr>
-      <tr>
-        <td>CS 373 </td>
-        <td colspan="2">Combinatorial Algorithms </td>
-        <td> Semester 2 (2016)</td>
-        <td> 3.0 </td>
-        <td> B+ </td>
-        <td> 9.99</td>
-      </tr>
-      <tr>
-        <td>MATH 225 </td>
-        <td colspan="2">Multi-Variable Calculus </td>
-        <td> Semester 2 (2016)</td>
-        <td> 3.0 </td>
-        <td> A- </td>
-        <td> 10.98 </td>
-      </tr>
-    </tbody>
-    <tfoot style="
-    background: #FF473B;
-    color: #fff;
-    font-weight: bold;
-    border: solid 2px #fff;
-    ">
-      <tr>
-        <td colspan="4" class="footer">Total</td>
-        <td> 15.0 </td>
-        <td colspan="2">55.95 </td>
-      </tr>
-      <tr>
-        <td colspan="4" class="footer">GPA</td>
-        <td colspan="3">3.73 / 4.0 </td>
-      </tr>
-  </table>
+      <h1 id='javascript_study_notes'>JavaScript Study Notes</h1>
+
+<p><strong>teacher@technology-high.tk</strong></p>
+<hr />
+<p>Table of Contents:</p>
+<div class='maruku_toc'><ul style='list-style: none;'><li><span class='maruku_section_number'>1. </span><a href='#overview'>Overview</a><ul style='list-style: none;'><li><span class='maruku_section_number'>1.1. </span><a href='#use_external_javascript'>Use external JavaScript</a></li><li><span class='maruku_section_number'>1.2. </span><a href='#variable_and_operators'>Variable and Operators</a></li><li><span class='maruku_section_number'>1.3. </span><a href='#controll_structure'>Controll Structure</a></li><li><span class='maruku_section_number'>1.4. </span><a href='#functions'>Functions</a></li><li><span class='maruku_section_number'>1.5. </span><a href='#event'>Event</a></li></ul></li><li><span class='maruku_section_number'>2. </span><a href='#javascript_object'>JavaScript Object</a><ul style='list-style: none;'><li><span class='maruku_section_number'>2.1. </span><a href='#properties'>Properties</a></li><li><span class='maruku_section_number'>2.2. </span><a href='#methods'>Methods</a></li><li><span class='maruku_section_number'>2.3. </span><a href='#object_literal'>Object literal</a></li><li><span class='maruku_section_number'>2.4. </span><a href='#builtin_objects'>Built-in Objects</a></li></ul></li><li><span class='maruku_section_number'>3. </span><a href='#javascript_create_your_own_object'>JavaScript, Create Your Own Object</a><ul style='list-style: none;'><li><span class='maruku_section_number'>3.1. </span><a href='#create_a_direct_instance_of_an_object'>Create a direct instance of an object</a></li><li><span class='maruku_section_number'>3.2. </span><a href='#create_object_template'>Create object template</a></li></ul></li><li><span class='maruku_section_number'>4. </span><a href='#javascript_function_as_firstclass_object'>JavaScript Function as First-class object</a><ul style='list-style: none;'><li><span class='maruku_section_number'>4.1. </span><a href='#function_as_callbacks'>Function as callbacks</a></li><li><span class='maruku_section_number'>4.2. </span><a href='#function_context'>Function context</a></li><li><span class='maruku_section_number'>4.3. </span><a href='#scope'>Scope</a></li><li><span class='maruku_section_number'>4.4. </span><a href='#closure'>Closure</a></li><li><span class='maruku_section_number'>4.5. </span><a href='#argument_checking'>Argument checking</a></li><li><span class='maruku_section_number'>4.6. </span><a href='#type_checking'>Type checking</a></li></ul></li><li><span class='maruku_section_number'>5. </span><a href='#javascript_development_tools'>JavaScript Development Tools</a><ul style='list-style: none;'><li><span class='maruku_section_number'>5.1. </span><a href='#firebug_error_console_debugger_dom_inspector'>Firebug (error console, debugger, DOM inspector)</a></li><li><span class='maruku_section_number'>5.2. </span><a href='#venkman_debugging'>Venkman (debugging)</a></li><li><span class='maruku_section_number'>5.3. </span><a href='#jsunit_unit_testing'>JSUnit (unit testing)</a></li></ul></li></ul></div><hr />
+<h2 id='overview'><span class='maruku_section_number'>1. </span>Overview</h2>
+
+<h3 id='use_external_javascript'><span class='maruku_section_number'>1.1. </span>Use external JavaScript</h3>
+
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;script type=&quot;text/javascript&quot; src=&quot;xxx.js&quot;&gt; &lt;/script&gt;
+    &lt;/head&gt;
+&lt;/html&gt;</code></pre>
+
+<h3 id='variable_and_operators'><span class='maruku_section_number'>1.2. </span>Variable and Operators</h3>
+
+<ul>
+<li>
+<p>Comments are //</p>
+</li>
+
+<li>
+<p>Code blocks { &#8230; }</p>
+</li>
+
+<li>
+<p>Variables</p>
+
+<pre><code>  x=5;
+  var x=5;</code></pre>
+</li>
+
+<li>
+<p>Arithmetic Operators:</p>
+
+<pre><code>  +, -, *, /, % (modulus), ++, --</code></pre>
+</li>
+
+<li>
+<p>Assignment Operators:</p>
+
+<pre><code>  =, +=, -=, *=, /=, %=</code></pre>
+</li>
+
+<li>
+<p>String addition</p>
+
+<pre><code>  x = &quot;5&quot; + &quot;5&quot; // result is &quot;55&quot;
+  x = 5 + &quot;5&quot;   // result is still &quot;55&quot;</code></pre>
+</li>
+
+<li>
+<p>Comparison operators</p>
+
+<pre><code>  ==      // equal to
+  ===     // exactly equal to (value and type)
+  !=      // not equal to
+  &gt;       // greater
+  &lt;       // less
+  &gt;=      // greater than or equal to
+  &lt;=      // less than or equal to</code></pre>
+</li>
+
+<li>
+<p>Logical operators &amp;&amp; // and || // or ! // not</p>
+</li>
+
+<li>
+<p>Conditional operator</p>
+
+<pre><code>  varname = (condition)? value1: value2</code></pre>
+</li>
+</ul>
+
+<h3 id='controll_structure'><span class='maruku_section_number'>1.3. </span>Controll Structure</h3>
+
+<ul>
+<li>
+<p>if</p>
+
+<pre><code>  if (condition) {
+  ...
+  }</code></pre>
+</li>
+
+<li>
+<p>if else</p>
+
+<pre><code>  if (condition) {
+  ...
+  } else {
+  ...
+  }</code></pre>
+</li>
+
+<li>
+<p>if &#8230; else if &#8230; else</p>
+
+<pre><code>  if (condition)
+  { ... }
+  else if (condition)
+  { ... }
+  else
+  { ... }</code></pre>
+</li>
+
+<li>
+<p>switch statement</p>
+
+<pre><code>  switch(n)
+  {
+      case 1:
+                  code block
+                  break;
+      case 2:
+                  code block
+                  break;
+      default:
+                  code default block
+  }</code></pre>
+</li>
+
+<li>
+<p>for loop</p>
+
+<pre><code>  for (var=startvalue; var &lt;= endvalue; var+var+increment)
+  {
+      code;
+  }</code></pre>
+</li>
+
+<li>
+<p>for &#8230; in loop</p>
+
+<pre><code>  for (var in object) {
+      code;
+  }</code></pre>
+</li>
+
+<li>
+<p>while loop while (var &lt; endvalue) { code; }</p>
+</li>
+
+<li>
+<p>do &#8230; while loop</p>
+
+<pre><code>  do {
+      code;
+  } while (var &lt;= endval);</code></pre>
+</li>
+</ul>
+
+<h3 id='functions'><span class='maruku_section_number'>1.4. </span>Functions</h3>
+
+<p>Function can be defined as:</p>
+
+<pre><code>function func_name(var1, var2, ... )
+{
+    some code
+}</code></pre>
+
+<p>The variables declared within a function is local to the function.</p>
+
+<h3 id='event'><span class='maruku_section_number'>1.5. </span>Event</h3>
+
+<p>Every element on a web page has certain events which can trigger a JavaScript. Examples such as:</p>
+
+<ul>
+<li>
+<p>onLoad and onUnload: triggered when user enters or leaves the page</p>
+</li>
+
+<li>
+<p>onFocus, onBlur, and onChange: often used in combination with validation of form field.</p>
+
+<pre><code>  &lt;input type=&quot;text&quot; size=&quot;30&quot; id=&quot;email&quot; onchange=&quot;checkEmail()&quot;&gt;</code></pre>
+</li>
+
+<li>
+<p>onMouseOver and onMouseOut - often used to create animated button</p>
+</li>
+</ul>
+
+<h2 id='javascript_object'><span class='maruku_section_number'>2. </span>JavaScript Object</h2>
+
+<p>Things to know:</p>
+
+<ul>
+<li>
+<p>A JavaScript object is an unordered collection of properties.</p>
+</li>
+
+<li>
+<p>Properties consists of a name and a value</p>
+</li>
+
+<li>
+<p>Objects can be declared as object literals</p>
+</li>
+
+<li>
+<p>Top-level &#8216;variables&#8217; are properties of <code>window</code>.</p>
+</li>
+</ul>
+
+<h3 id='properties'><span class='maruku_section_number'>2.1. </span>Properties</h3>
+
+<p>Properties are values associated with an object. For example of using length property of String object:</p>
+
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var txt = &quot;Hello world!&quot;;
+    document.write(txt.length);
+&lt;/script&gt;</code></pre>
+
+<h3 id='methods'><span class='maruku_section_number'>2.2. </span>Methods</h3>
+
+<p>Methods are actions that ban be performed on objects.</p>
+
+<p>For example:</p>
+
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var str=&quot;Hello worlds!&quot;;
+    document.write(str.toUpperCase();
+&lt;/script&gt;</code></pre>
+
+<h3 id='object_literal'><span class='maruku_section_number'>2.3. </span>Object literal</h3>
+
+<pre><code>var ride = {
+    make: &quot;Honda&#39;,
+    model: &quot;Civic&#39;,
+    purchased: new Date(2008, 3, 12),
+    owner: {
+        name: &quot;Feiyi Wang&quot;,
+        occupation: &quot;Bum&quot;
+    }
+};</code></pre>
+
+<p>This notation, come to be known as <strong>JSON</strong> (JavaScript Object Notation) Also notice how nested objects are declared.</p>
+
+<h3 id='builtin_objects'><span class='maruku_section_number'>2.4. </span>Built-in Objects</h3>
+
+<ul>
+<li>
+<p>String.</p>
+</li>
+
+<li>
+<p>Date.</p>
+
+<pre><code>  // return today&#39;s date
+  var d = new Date();
+
+  // turn time as milliseconds since 1970
+  document.write(d.getTime());
+
+  // set full year
+  d.setFullYear(1992, 10, 3)
+
+  var weekday = new Array(7);
+  weekday[0] = &quot;Sunday&quot;;
+  weekday[1] = &quot;Monday&quot;;
+  ...
+  weekday[6] = &quot;Saturday&quot;;
+  document.write(&quot;Today is&quot; + weekday[d.getDay()]);</code></pre>
+</li>
+
+<li>
+<p>Array</p>
+
+<pre><code>  // create an array
+  var myCars = new Array();
+
+  // or
+  var myCars = new Array(&quot;Sabb&quot;, &quot;Volvo&quot;, &quot;BMW&quot;);
+
+  // or
+  var myCars = [&quot;Sabb&quot;, &quot;Volvo&quot;, &quot;BMW&quot;);
+
+  // for loop
+  for (x in myCars)
+  {
+      document.write(myCars[x] + &quot;&lt;br /&gt;&quot;);
+  }
+
+  // merge array
+  var parents = [&quot;mom&quot;, &quot;dad&quot;]
+  var children = [&quot;mike&quot;, &quot;jenny&quot;]
+  var family = parents.concat(children);
+
+  // join array elements in to string
+  var fstr = family.join();
+
+  // remove the last element of the array
+  family.pop()        // jenney
+
+  // add to last
+  family.push(&quot;jenny&quot;)
+
+  // add to beginning
+  family.unshift(&quot;grandma&quot;);</code></pre>
+</li>
+
+<li>
+<p>Boolean</p>
+
+<pre><code>  var myB = new Boolean();</code></pre>
+
+<p>If Boolean object has no initial value, or if it is 0, -0, null, &#8221;&#8221;, false, undefined, or NaN, the object is set to False.</p>
+
+<p>Otherwise, it is True.</p>
+</li>
+
+<li>
+<p>Math</p>
+</li>
+
+<li>
+<p>RegExp: for regular expression</p>
+</li>
+
+<li>
+<p><code>navigator</code> for browser detection.</p>
+
+<pre><code>  // Broswer code name
+  navigator.appCodeName
+
+  // Browser name:
+  navigator.appName
+
+  // Browser version
+  navigator.appVersion
+
+  // Cookie enabled
+  navigator.cookieEnabled</code></pre>
+</li>
+</ul>
+
+<h2 id='javascript_create_your_own_object'><span class='maruku_section_number'>3. </span>JavaScript, Create Your Own Object</h2>
+
+<h3 id='create_a_direct_instance_of_an_object'><span class='maruku_section_number'>3.1. </span>Create a direct instance of an object</h3>
+
+<pre><code>// with 3 properties, you can just assign it.
+p = new Object();
+p.firstName = &quot;John&quot;
+p.lastName = &quot;Oliver&quot;
+p.age = 50;</code></pre>
+
+<h3 id='create_object_template'><span class='maruku_section_number'>3.2. </span>Create object template</h3>
+
+<pre><code>function person(firstname, lastname, age)
+{
+    this.firstname = firstname;
+    this.lastname = lastname;
+    this.age = age;
+
+    this.workhours = workhours;
+}</code></pre>
+
+<p>Notice that:</p>
+
+<ul>
+<li>
+<p>An object tempalte is just plain function.</p>
+</li>
+
+<li>
+<p>You can attach method <code>workhours</code> to it, by then you have to define it somewhere.</p>
+</li>
+
+<li>
+<p>Once you have object template, you can create many instance of it now.</p>
+</li>
+</ul>
+
+<h2 id='javascript_function_as_firstclass_object'><span class='maruku_section_number'>4. </span>JavaScript Function as First-class object</h2>
+
+<p>A function can:</p>
+
+<ul>
+<li>
+<p>Assigned to variables</p>
+</li>
+
+<li>
+<p>Assigned to a property of an object</p>
+</li>
+
+<li>
+<p>Passed as an paramter</p>
+</li>
+
+<li>
+<p>Returned as function result</p>
+</li>
+
+<li>
+<p>Created using literals</p>
+</li>
+</ul>
+
+<p>Function is <em>not</em> a named entity: <code>function</code> keyword creates a <code>Function</code> instance and assigned it to a <code>window</code> property if you delcare such at top-level. For example, the following two forms are the same:</p>
+
+<pre><code>function myFunc() {
+    alert(&#39;I am working&#39;);
+}
+
+&lt;==&gt;
+
+myFunc = function() {
+    alert(&#39;I am working&#39;);
+}</code></pre>
+
+<p>And the second form is also known as <em>function literal</em>, just as <em>object literal</em> we talked above.</p>
+
+<h3 id='function_as_callbacks'><span class='maruku_section_number'>4.1. </span>Function as callbacks</h3>
+
+<p>Consider the following:</p>
+
+<pre><code>function hello() { alert(&#39;Hi there!&#39;); }
+
+setTimeout(hello, 5000)</code></pre>
+
+<p>or a more elegant version:</p>
+
+<pre><code>setTimeout( function() { alert(&#39;Hi there!&#39;); }, 5000 )</code></pre>
+
+<p>In the later case, we express the functional literal directly in the parameter lsit, and no name is generated.</p>
+
+<h3 id='function_context'><span class='maruku_section_number'>4.2. </span>Function context</h3>
+
+<p>A function <em>f</em> acts as a method of object <em>o</em> when <em>o</em> serves as the function context of the invocation of <em>f</em>.</p>
+
+<p>Example:</p>
+
+<pre><code>var o1 = { handle: &#39;o1&#39; };
+var o2 = { handle: &#39;o2&#39; };
+var o3 = { handle: &#39;o3&#39; };
+
+function whoAmI() {
+    return this.handle;
+}
+
+o1.identifyMe = whoAmI;
+
+alert(whoAmI()); // window
+
+alert(o1.identifyMe()); // o1
+
+alert(whoAmI.call(o2)); // o2
+
+alert(whoAmI.apply(o3)); // o3</code></pre>
+
+<p>As you can see, you can change function context (<code>this</code>) by using function method <code>call()</code> or <code>apply()</code>.</p>
+
+<pre><code>alert(o1.identifyMe.call(o3)); // still o3</code></pre>
+
+<p>This example further shows that even we reference the function as a peroperty of <code>o1</code>, but the function context for this invocation is <code>o3</code>.</p>
+
+<p><strong>The important thing to know is not how function is declared, but how it is invoked.</strong></p>
+
+<h3 id='scope'><span class='maruku_section_number'>4.3. </span>Scope</h3>
+
+<ul>
+<li>
+<p>In JavaScript, scope is kept within function, but not within blocks (such as while, if and for statement).</p>
+</li>
+
+<li>
+<p>If you don&#8217;t use <code>var</code>, then it is implictly in global scope.</p>
+
+<p>var foo = &#8216;test&#8217;;</p>
+
+<p>// within a block if (true) { // this is still within global scope var foo = &#8216;new test&#8217;; }</p>
+
+<p>alert( foo == &#8216;new test&#8217; ) // true</p>
+
+<p>function test() { var foo = &#8216;old test&#8217;; }</p>
+
+<p>// even called, &#8216;foo&#8217; remains within the scope of the function test();</p>
+
+<p>alert ( foo == &#8216;new test&#8217; ) // still true</p>
+</li>
+</ul>
+
+<h3 id='closure'><span class='maruku_section_number'>4.4. </span>Closure</h3>
+
+<p>A <em>closure</em> is a <code>Function</code> instance coupled with the local variables from its environement that are ncessary for its exeuction.</p>
+
+<h3 id='argument_checking'><span class='maruku_section_number'>4.5. </span>Argument checking</h3>
+
+<pre><code>function sendMessage( msg, obj ) {
+    // if both a message and object are provided
+    if ( arguments.length == 2 )
+        // send message to the object.
+        obj.handleMesg( msg );
+    else
+        // otherwise, assume only a message is provided
+        // so just display default msg
+        alert( msg );
+}</code></pre>
+
+<h3 id='type_checking'><span class='maruku_section_number'>4.6. </span>Type checking</h3>
+
+<pre><code>function displayError( msg ) {
+    // check and make sure that msg is not undefined
+
+    if ( typeof msg == &#39;undefined&#39; ) {
+        // set default
+        msg = &quot;An error occured.&#39;;
+    }
+
+    // display the message
+    alert( msg );
+ }</code></pre>
+
+<h2 id='javascript_development_tools'><span class='maruku_section_number'>5. </span>JavaScript Development Tools</h2>
+
+<h3 id='firebug_error_console_debugger_dom_inspector'><span class='maruku_section_number'>5.1. </span>Firebug (error console, debugger, DOM inspector)</h3>
+
+<h3 id='venkman_debugging'><span class='maruku_section_number'>5.2. </span>Venkman (debugging)</h3>
+
+<h3 id='jsunit_unit_testing'><span class='maruku_section_number'>5.3. </span>JSUnit (unit testing)</h3>
     </div>
   </div>
   <div class="bg-dark">
