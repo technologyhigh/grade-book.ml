@@ -72,15 +72,12 @@ function loadReport(){
 		courses = storecourses( sessionStorage.getItem("loggedIn") );
 	}
 
-	// Counter to go through the creation of table rows smoothly.
-	var tblRowsCounter = 0;
-
 	// Find a <table> element with id="userReportCard":
 	var table = document.getElementById("userReportCard");
 
-	for(;tblRowsCounter < 5; tblRowsCounter++){
+	for(var i = 0; i < courses.length; i++){
 		// Create an empty <tr> element and add it to the 1st position of the table:
-		var row = table.tBodies[0].insertRow(tblRowsCounter);
+		var row = table.tBodies[0].insertRow(i);
 
 		// Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
 		var cCode = row.insertCell(0);
@@ -90,14 +87,29 @@ function loadReport(){
 		var cLetr = row.insertCell(4);
 		var cPoin = row.insertCell(5);
 
+		// Random number to assign letter grade and match it with point grade
+		var ranNum = Math.floor(Math.random() * 6);
 		// Add some text to the new cells:
-		cell1.innerHTML = "NEW CELL1";
-		cell2.innerHTML = "NEW CELL2";
+		cCode.innerHTML = courses[i];
+		cName.innerHTML = courses[i];
+		cSem.innerHTML = "Semester 1 (2017)";
+		cCred.innerHTML = "3.0";
+		cLetr.innerHTML = "FEDCBA".charAt( ranNum );
+		cPoin.innerHTML = ranNum * 2;
 	}
 	alert("Bappings");
 }
 function storecourses(uId){
-
+	var stringCourses = "[";
+	for(var i = 0; i < 5; i++){
+		stringCourses = stringCourses + "\"" + jsonX[Math.floor(Math.random() * jsonX.length)] + "\""
+		if(i != 4){
+			stringCourses = stringCourses + ",";
+		}
+	}
+	stringCourses = stringCourses + "]";
+	localStorage.setItem(uId + "courses", stringCourses);
+	return loadCourses(uId);
 }
 function loadCourses(uId){
 	return JSON.parse( localStorage.getItem(uId + "courses") );
