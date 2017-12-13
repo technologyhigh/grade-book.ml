@@ -90,7 +90,7 @@ function loadReport(){
 		// Random number to assign letter grade and match it with point grade
 		var ranNum = Math.floor(Math.random() * 6);
 		// Add some text to the new cells:
-		cCode.innerHTML = courses[i];
+		cCode.innerHTML = courses[i].substr(0, 3);
 		cName.innerHTML = courses[i];
 		cName.setAttribute("colspan", 2);
 		cSem.innerHTML = "Semester 1 (2017)";
