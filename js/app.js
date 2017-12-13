@@ -70,6 +70,7 @@ function lRc(){
 		return;
 	} else {
 		courses = storecourses( sessionStorage.getItem("loggedIn") );
+		return;
 	}
 
 	// Find a <table> element with id="userReportCard":
@@ -98,7 +99,6 @@ function lRc(){
 		cLetr.innerHTML = "FEDCBA".charAt( ranNum );
 		cPoin.innerHTML = ranNum * 2;
 	}
-	alert("Bappings");
 }
 function storecourses(uId){
 	var stringCourses = "[";
