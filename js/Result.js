@@ -26,7 +26,6 @@ function Result(missing, right, wrong) {
         tr.appendChild(label);
         tr.appendChild(score);
     }
-
     this.html.appendChild(tr);
 }
 
@@ -36,8 +35,6 @@ Result.prototype.render = function() {
     if (old) {
         document.body.removeChild(old);
     }
-
-    document.body.appendChild(this.html);
-
+    document.getElementById("quizPos").appendChild(this.html);
     return this;
 };

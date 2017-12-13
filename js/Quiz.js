@@ -72,7 +72,7 @@ Quiz.prototype.create = function() {
     }
 
     form.appendChild(submit);
-    document.body.appendChild(form);
+    document.getElementById("quizPos").appendChild(form);
 };
 
 
