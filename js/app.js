@@ -63,7 +63,7 @@ $(document).ready(function(){
     	}
     );
 });
-function loadReport(){
+function lRc(){
 	var courses = null;
 	if( coursesExists( sessionStorage.getItem("loggedIn")) ){
 		courses = loadCourses( sessionStorage.getItem("loggedIn") );
