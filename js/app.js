@@ -1,3 +1,4 @@
+jsonX = null;
 $(document).ready(function(){
 	// Check to see if page requires signin. If it does and the user isn't logged in
 	// then redirect them to the login page.
@@ -8,8 +9,7 @@ $(document).ready(function(){
 		}
 		$(location).attr('href','login.html');
 	}
-
-	global jsonX = null;
+	
 	$.ajax({
 			'async': false,
 			'global': false,
