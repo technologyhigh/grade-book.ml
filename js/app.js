@@ -92,6 +92,7 @@ function loadReport(){
 		// Add some text to the new cells:
 		cCode.innerHTML = courses[i];
 		cName.innerHTML = courses[i];
+		cName.colSpan = 2;
 		cSem.innerHTML = "Semester 1 (2017)";
 		cCred.innerHTML = "3.0";
 		cLetr.innerHTML = "FEDCBA".charAt( ranNum );
