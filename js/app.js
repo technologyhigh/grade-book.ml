@@ -1,21 +1,35 @@
-//var rForm = document.getElementById("registerUser");
-//rForm.addEventListener("submit", storeUser);
-
 $(document).ready(function(){
 	// Check to see if page requires signin. If it does and the user isn't logged in
 	// then redirect them to the login page.
 	if( $("#securedPage").length ){
 		if( sessionStorage.getItem("loggedIn") && entryExists(sessionStorage.getItem("loggedIn")) ){
-			alert("You're logged in! Yeaaaaah!!!");
+			$("#uWM").text("Welcome " + getUser( sessionStorage.getItem("loggedIn") ).fName + "!");
 			return;
 		}
 		$(location).attr('href','login.html');
 	}
 
+	var json = (function () {
+	    var json = null;
+	    $.ajax({
+	        'async': false,
+	        'global': false,
+	        'url': "courses.json",
+	        'dataType': "json",
+	        'success': function (data) {
+	            json = data;
+	        }
+	    });
+	    return json;
+	})();
+});
+
+$(document).ready(function(){
     $("#registerUser").submit(function(event){
         event.preventDefault();
         storeUser();
     });
+
     $("#loginUser").submit(
     		function(event){
     			event.preventDefault();
@@ -38,13 +52,20 @@ $(document).ready(function(){
     						alert(userFName + ", you seem to have forgotten your access code. Please see your teacher for assistance logging into the system.");
     						return;
     				}
-    				
+
     				errorCounter++;
     			}while( !verifyUser(userACode, userFName) && errorCounter <= 3 );
 
     			$(location).attr('href','gradebook.html');
     		}
     	);
+
+    $("#userLogout").click(
+    	function(event){
+    		event.preventDefault();
+    		sessionStorage.removeItem("loggedIn");
+    	}
+    );
 });
 
 function storeUser(){
@@ -63,6 +84,7 @@ function storeUser(){
 		accessCode: aCode
 	}) );
 	alert("Your Access Code is: " + aCode + ". Please use it to login.");
+	$(location).attr('href','login.html');
 }
 
 function entryExists(x){
@@ -84,4 +106,19 @@ function verifyUser(accCode, userFirstName){
   		return false;
 	}
 	return false;
+}
+
+function getUser(accCode){
+	if (localStorage.getItem(accCode) != null) {
+		var userInfo = JSON.parse(
+    		localStorage.getItem(accCode)
+    	);
+    	return userInfo;
+	}
+	return {
+		fName: "John",
+		lName: "Doe",
+		fClass: "0A",
+		accessCode: 0000
+	};
 }

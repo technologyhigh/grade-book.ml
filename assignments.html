@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- PAGE settings -->
-  <title>Gradebook |Technology High Gradebook</title>
+  <title>Your Assignments - Gradebook |Technology High Gradebook</title>
   <meta name="description" content="A little website created as part of requirements to earn a degree at the UWI Mona in Computer Science and Information Technology.">
   <meta name="keywords" content="Tommy, Gooden, Technology, High">
   <!-- CSS dependencies -->
@@ -44,12 +44,11 @@
     </div>
   </nav>
   <!-- Cover -->
-  <div class="pt-5 bg-primary">
-    <div class="container mt-5 pt-5">
+  <div class="bg-primary">
+    <div class="container mt-5">
       <div class="row">
         <div class="col-md-12 my-5 text-lg-left text-center align-self-center">
-          <h1 class="display-1" id="uWM">Your Gradebook</h1>
-          <p class="lead">This is the homepage for your Gradebook. Look below for links to all the resources you need.</p>
+          <h1 class="display-1">Submitted Assignments</h1>
         </div>
       </div>
     </div>
@@ -57,47 +56,85 @@
   <!-- Footer -->
   <div class="py-5 bg-light">
     <div class="container">
-      <div class="row">
-        <div class="py-5 col-md-6">
-          <div class="row">
-            <div class="text-center col-4"><i class="d-block mx-auto fa fa-5x fa-angle-double-up"></i></div>
-            <div class="col-8">
-              <h5 class="mb-3 text-primary"><a href="assignments.html"><b>Assignments</b></a></h5>
-              <p class="my-1">View all your current assignments and the grades awarded to each assignment. </p>
-            </div>
-          </div>
-        </div>
-        <div class="py-5 col-md-6">
-          <div class="row">
-            <div class="text-center col-4"><i class="d-block mx-auto fa fa-5x fa-map-o"></i></div>
-            <div class="col-8">
-              <h5 class="mb-3 text-primary"><a href="notes.html"><b>Notes</b></a></h5>
-              <p class="my-1">Missed a class due to illness or any other situation beyond your control? No worries,
-                Get all the notes right here! They are posted for you by your teacher. </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="py-5 col-md-6">
-          <div class="row">
-            <div class="text-center col-4"><i class="d-block mx-auto fa fa-5x fa-file-o"></i></div>
-            <div class="col-8">
-              <h5 class="mb-3 text-primary"><a href="grades.html"><b>Grades</b></a></h5>
-              <p class="my-1">Want to see a report like view of what you have been doing in class all year? Grades section will give you all that and more. </p>
-            </div>
-          </div>
-        </div>
-        <div class="py-5 col-md-6">
-          <div class="row">
-            <div class="text-center col-4"><i class="d-block mx-auto fa fa-5x fa-code"></i></div>
-            <div class="col-8">
-              <h5 class="mb-3 text-primary"><a href="quiz.html"><b>Submit Assignments</b></a></h5>
-              <p class="my-1">Have an assignment you need to send to your teacher? Click here and upload to your Gradebook. Teacher will be sent an email notifying them of your submission. </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <table class="table table-striped">
+    <thead style="
+    background: #FF473B;
+    color: #fff;
+    font-weight: bold;
+    border: solid 2px #fff;
+    box-shadow: 0px 0px 15px 2px #aaa8a8;
+    ">
+      <tr>
+        <td colspan="3">Course </td>
+        <td rowspan="2"> Semester </td>
+        <td rowspan="2"> Credits </td>
+        <td colspan="2"> Grade </td>
+      </tr>
+      <tr>
+        <td>Code </td>
+        <td colspan="2"> Name </td>
+        <td> Letter </td>
+        <td> Points </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>CS 225 </td>
+        <td colspan="2">Data Structures </td>
+        <td> Semester 1 (2017)</td>
+        <td> 3.0 </td>
+        <td> A </td>
+        <td> 12.0 </td>
+      </tr>
+      <tr>
+        <td>PHIL 105 </td>
+        <td colspan="2">Ethics </td>
+        <td> Semester 1 (2017)</td>
+        <td> 3.0 </td>
+        <td> A- </td>
+        <td> 10.98 </td>
+      </tr>
+      <tr>
+        <td>ECE 310 </td>
+        <td colspan="2">Digital Signal Processing </td>
+        <td> Semester 2 (2016)</td>
+        <td> 3.0 </td>
+        <td> A </td>
+        <td> 12 </td>
+      </tr>
+      <tr>
+        <td>CS 373 </td>
+        <td colspan="2">Combinatorial Algorithms </td>
+        <td> Semester 2 (2016)</td>
+        <td> 3.0 </td>
+        <td> B+ </td>
+        <td> 9.99</td>
+      </tr>
+      <tr>
+        <td>MATH 225 </td>
+        <td colspan="2">Multi-Variable Calculus </td>
+        <td> Semester 2 (2016)</td>
+        <td> 3.0 </td>
+        <td> A- </td>
+        <td> 10.98 </td>
+      </tr>
+    </tbody>
+    <tfoot style="
+    background: #FF473B;
+    color: #fff;
+    font-weight: bold;
+    border: solid 2px #fff;
+    ">
+      <tr>
+        <td colspan="4" class="footer">Total</td>
+        <td> 15.0 </td>
+        <td colspan="2">55.95 </td>
+      </tr>
+      <tr>
+        <td colspan="4" class="footer">GPA</td>
+        <td colspan="3">3.73 / 4.0 </td>
+      </tr>
+  </table>
     </div>
   </div>
   <div class="bg-dark">
