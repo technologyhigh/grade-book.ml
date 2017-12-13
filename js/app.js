@@ -75,12 +75,12 @@ function loadReport(){
 	// Counter to go through the creation of table rows smoothly.
 	var tblRowsCounter = 0;
 
-	// Find a <table> element with id="myTable":
+	// Find a <table> element with id="userReportCard":
 	var table = document.getElementById("userReportCard");
 
 	for(;tblRowsCounter < 5; tblRowsCounter++){
 		// Create an empty <tr> element and add it to the 1st position of the table:
-		var row = table.insertRow(tblRowsCounter);
+		var row = table.tBodies[0].insertRow(tblRowsCounter);
 
 		// Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
 		var cell1 = row.insertCell(0);
